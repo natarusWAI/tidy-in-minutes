@@ -37,7 +37,7 @@ test('el pie enlaza el aviso de afiliados y la privacidad', () => {
 test('los enlaces de afiliado llevan rel="sponsored"', () => {
   // Hoy no hay productos de afiliado; si aparece uno, su enlace debe ser sponsored.
   const html = read('products/index.html');
-  const hasAffiliate = html.includes('affiliate link');
+  const hasAffiliate = html.includes('· affiliate link</span>');
   assert.ok(!hasAffiliate || /rel="sponsored noopener"/.test(html));
 });
 
