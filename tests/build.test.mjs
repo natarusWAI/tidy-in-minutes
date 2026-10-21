@@ -40,7 +40,8 @@ test('los enlaces de afiliado llevan rel="sponsored"', () => {
 
 test('los enlaces internos apuntan a páginas existentes', () => {
   const html = read('index.html');
-  const base = process.env.BASE_PATH || '/';
+  // En GitHub BASE_PATH llega sin barra final (/nombre-del-repo).
+  const base = (process.env.BASE_PATH || '/').replace(/\/?$/, '/');
   const hrefs = [...html.matchAll(/href="([^"#?]+)"/g)].map((m) => m[1]);
   for (const h of hrefs) {
     if (!h.startsWith(base) || h.includes('.')) continue;
