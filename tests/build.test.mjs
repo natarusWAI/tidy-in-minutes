@@ -52,3 +52,8 @@ test('los enlaces internos apuntan a páginas existentes', () => {
     assert.ok(existsSync(new URL(`${rel}index.html`, dist)), `enlace roto: ${h}`);
   }
 });
+
+test('la home incluye la verificación de dominio de Pinterest', () => {
+  const html = read('index.html');
+  assert.match(html, /<meta name="p:domain_verify" content="82347584f95b73793d7a501b812875a7"\s*\/?>/);
+});
