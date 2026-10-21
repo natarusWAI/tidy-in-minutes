@@ -7,8 +7,7 @@ export const LAST_UPDATED = '2026-10-20';
 
 // TODO: reemplazar por el enlace real del producto en Payhip cuando esté creado.
 export const PAYHIP_URL = 'https://payhip.com/b/PROVISORIO';
-// TODO: reemplazar por el tag real de Amazon Associates (ej. 'tuid-20') para los enlaces de afiliado.
-export const AMAZON_TAG = 'PROVISORIO-20';
+export const AMAZON_TAG = 'tidyinminutes-20';
 
 export const PRODUCTS = [
   {
