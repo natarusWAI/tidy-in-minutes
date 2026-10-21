@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE_NAME, CONTACT_EMAIL, LAST_UPDATED } from '../config';
+---
+<Base title="Affiliate Disclosure" description="How Tidy in Minutes earns money through affiliate links.">
+  <h1>Affiliate Disclosure</h1>
+  <p class="muted">Last updated: {LAST_UPDATED}</p>
+  <p>{SITE_NAME} participates in affiliate programs. This means some links on this site and in our Pinterest pins are affiliate links: if you click one and buy something, we may earn a commission <strong>at no additional cost to you</strong>.</p>
+  <h2>Our approach</h2>
+  <ul>
+    <li>We only recommend products we believe are useful for home organization and cleaning.</li>
+    <li>Commissions never change the price you pay.</li>
+    <li>Affiliate links are marked on product pages and articles.</li>
+  </ul>
+  <h2>Amazon Associates</h2>
+  <p>If we join the Amazon Associates program, we will add the required statement here: “As an Amazon Associate we earn from qualifying purchases.”</p>
+  <h2>Our own products</h2>
+  <p>We also sell our own digital products (planners, checklists, guides). Those links are not affiliate links.</p>
+  <h2>Questions</h2>
+  <p>Write to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+</Base>

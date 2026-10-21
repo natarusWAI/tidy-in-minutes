@@ -1,0 +1,20 @@
+---
+import { SUBSCRIBE_URL } from '../config';
+---
+<section class="card">
+  <h2>Get one tidy tip a week</h2>
+  <p>Short, practical organizing ideas straight to your inbox. Unsubscribe anytime.</p>
+  {SUBSCRIBE_URL ? (
+    <form action={SUBSCRIBE_URL} method="post">
+      <label for="email">Email address</label><br />
+      <input id="email" type="email" name="email" required placeholder="you@example.com" />
+      <button class="btn" type="submit">Subscribe</button>
+    </form>
+  ) : (
+    <p class="muted">Email signup is coming soon.</p>
+  )}
+  <p class="muted">By subscribing you agree to our privacy policy.</p>
+</section>
+<style>
+  input { padding: .5rem; border: 1px solid #ccc; border-radius: 8px; margin: .4rem .4rem .4rem 0; min-width: 14rem; }
+</style>

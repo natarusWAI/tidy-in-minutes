@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE_NAME, CONTACT_EMAIL, LAST_UPDATED } from '../config';
+---
+<Base title="Privacy Policy" description="How Tidy in Minutes handles your personal information.">
+  <h1>Privacy Policy</h1>
+  <p class="muted">Last updated: {LAST_UPDATED}</p>
+  <p>This policy explains what information {SITE_NAME} collects and how we use it.</p>
+  <h2>Information we collect</h2>
+  <ul>
+    <li><strong>Email address</strong>, only if you subscribe to our newsletter.</li>
+    <li><strong>Usage data</strong>, such as pages visited, if we enable analytics. Pinterest and other third parties may also set their own cookies when you arrive from a pin.</li>
+  </ul>
+  <h2>How we use it</h2>
+  <p>We use your email to send the newsletter you asked for. You can unsubscribe at any time with the link in every email. We do not sell your personal information.</p>
+  <h2>Third parties</h2>
+  <p>Our email provider processes subscriber data on our behalf. Store and affiliate links lead to third-party sites with their own privacy policies.</p>
+  <h2>Cookies</h2>
+  <p>This site does not set cookies of its own. Third-party services (analytics, embedded content, affiliate networks) may do so.</p>
+  <h2>Your rights</h2>
+  <p>You may ask us to access, correct or delete your data by writing to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+  <h2>Children</h2>
+  <p>This site is not directed at children under 13.</p>
+  <h2>Changes</h2>
+  <p>We may update this policy; the date above shows the latest revision.</p>
+</Base>

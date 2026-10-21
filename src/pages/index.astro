@@ -1,0 +1,30 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import SubscribeForm from '../components/SubscribeForm.astro';
+import { TAGLINE } from '../config';
+
+const base = import.meta.env.BASE_URL;
+const posts = (await getCollection('blog', (p) => !p.data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+---
+<Base>
+  <h1>A tidier home in a few minutes a day</h1>
+  <p>{TAGLINE}</p>
+  <p>
+    <a class="btn" href={`${base}blog/`}>Read the blog</a>
+    <a href={`${base}products/`}>See our planners and checklists</a>
+  </p>
+
+  <h2>Latest articles</h2>
+  {posts.map((p) => (
+    <article class="card">
+      <h3><a href={`${base}blog/${p.id}/`}>{p.data.title}</a></h3>
+      <p class="muted">{p.data.pubDate.toISOString().slice(0, 10)}</p>
+      <p>{p.data.description}</p>
+    </article>
+  ))}
+
+  <SubscribeForm />
+</Base>

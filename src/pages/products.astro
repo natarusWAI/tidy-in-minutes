@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import { PRODUCTS } from '../config';
+const base = import.meta.env.BASE_URL;
+---
+<Base title="Products" description="Planners, checklists and recommended tools to keep your home tidy.">
+  <h1>Products</h1>
+  <p class="muted">Items marked “affiliate” are third-party products; we may earn a commission at no extra cost to you. <a href={`${base}affiliate-disclosure/`}>Details</a>.</p>
+  {PRODUCTS.map((p) => (
+    <section class="card">
+      <h2>{p.name}</h2>
+      <p>{p.description}</p>
+      <p><strong>{p.price}</strong>{p.affiliate && <span class="muted"> · affiliate link</span>}</p>
+      <a class="btn" href={p.url} rel={p.affiliate ? 'sponsored noopener' : 'noopener'} target="_blank">
+        {p.affiliate ? 'View on the store' : 'Get it now'}
+      </a>
+    </section>
+  ))}
+</Base>
